@@ -1,5 +1,5 @@
 G.AddData({
-name:'PIzza Mod',
+name:'Pizza Mod',
 author:'OrteilDashnet',
 desc:'A simple example mod that adds pepperoni pizzas',
 engineVersion:1,
@@ -9,7 +9,6 @@ sheets:{'spicySheet':'img/spicyModIconSheet.png'},//custom stylesheet (note : br
 func:function()
 {
 	
-	//First we create a couple new resources :
 	new G.Res({
 		name:'Milk',
 		desc:'[Milk] is loaded with nutrients and calcium, and, depending on who you ask, may produce a pleasant sensation when eaten.',
@@ -54,7 +53,7 @@ func:function()
 	//Then we augment the base data to incorporate our new resources :
 		//adding hot pepper as something that can be gathered from grass
 	G.getDict('grass').res['gather']['Milk']=3;});
-	G.getDict('artisan').modes['hot']={name:'Pizza dough',desc:'Turn 3 [cured meat] and 3 [herb]s into 1 [pepperoni].',req:{'Pizza dough preparing':true},use:{'knapped tools':1}};
+	G.getDict('artisan').modes['hot']={name:'Pizza dough',desc:'Turn 3 [cured meat] and 3 [herb]s into 1 [Pizza dough].',req:{'Pizza dough preparing':true},use:{'knapped tools':1}};
 	G.getDict('artisan').effects.push({type:'convert',from:{'water':3,'herb':3},into:{'Pizza dough':1},every:3,mode:'Pepperoni'});
 	G.getDict('artisan').modes['hot']={name:'Cheese',desc:'Turn 3 [milk] and 1 [salt]s into 1 [cheese].',req:{'Cheese Preparing':true},use:{'knapped tools':1}};
 	G.getDict('artisan').effects.push({type:'convert',from:{'milk':3,'salt':3},into:{'cheese':1},every:3,mode:'Cheese'});
